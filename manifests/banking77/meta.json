@@ -1,0 +1,36 @@
+{
+  "dataset": "BANKING77",
+  "source": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/master/banking_data",
+  "license": "CC BY 4.0",
+  "subset_seed": 2026,
+  "raw_sha256": {
+    "train": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+    "test": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+  },
+  "raw_counts": {
+    "train": 10003,
+    "test": 3080
+  },
+  "planned_counts": {
+    "train": 8002,
+    "tune": 2001,
+    "test": 3080
+  },
+  "final_counts": {
+    "train": 7995,
+    "tune": 2001,
+    "test": 3080
+  },
+  "duplicates_removed": {
+    "train_in_test": 7,
+    "tune_in_test": 0,
+    "train_in_tune": 0
+  },
+  "repeats_within_train_kept": 4,
+  "num_labels": 77,
+  "manifest_sha256": {
+    "train": "13a355b6f5621b09c6989562663eacc6f1cbb3304d15b80d806037fa59f76cd2",
+    "tune": "6a30d4a57621f10d79396ee3f050ac2d5e904f36f0f5e07405227835317118c3",
+    "test": "cf026eec1d3a20e8a6605407144aa17c00ccf543517a2ccf5583ff0c4018d046"
+  }
+}
