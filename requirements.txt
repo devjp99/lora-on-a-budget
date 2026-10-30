@@ -1,0 +1,9 @@
+# Tested together on Oct 30, 2026. torch comes preinstalled on Colab/Kaggle;
+# record the exact torch version from each run's ledger row.
+transformers==5.22.1
+peft==0.21.2
+pandas==3.0.5
+scikit-learn==1.9.1
+PyYAML>=6.0
+pytest>=8.0
+# Jainish: add bitsandbytes / evaluate / rouge-score pins for the decoder side here
