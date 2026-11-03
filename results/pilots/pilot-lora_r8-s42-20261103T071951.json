@@ -1,0 +1,139 @@
+{
+  "ledger_row": {
+    "run_id": "pilot-lora_r8-s42-20261103T071951",
+    "timestamp_utc": "2026-11-03T07:19:51+00:00",
+    "phase": "pilot",
+    "experiment": "E1",
+    "config": "configs/banking77/lora_r8.yaml",
+    "method": "lora",
+    "rank": 8,
+    "alpha": 16,
+    "seed": 42,
+    "lr": 0.0001,
+    "steps": 20,
+    "status": "completed",
+    "final_loss": 4.3445,
+    "peak_alloc_mb_first_step": 749.6,
+    "peak_alloc_mb_steady": 860.4,
+    "peak_reserved_mb_steady": 894.0,
+    "mean_step_s": 0.165,
+    "trainable_params": 944717,
+    "checkpoint_mb": 3.6,
+    "reload_max_abs_diff": "0.00e+00",
+    "projected_run_gpu_h": 0.06,
+    "device": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "notes": ""
+  },
+  "run_id": "pilot-lora_r8-s42-20261103T071951",
+  "config": {
+    "experiment": "E1",
+    "task": "banking77",
+    "model": {
+      "name": "FacebookAI/roberta-base",
+      "revision": "main"
+    },
+    "data": {
+      "manifest_dir": "manifests/banking77",
+      "raw_dir": "data/raw",
+      "max_len": 128
+    },
+    "method": "lora",
+    "lora": {
+      "rank": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "query",
+        "value"
+      ]
+    },
+    "train": {
+      "epochs": 5,
+      "micro_batch": 8,
+      "grad_accum": 4,
+      "learning_rates": [
+        0.0001,
+        0.0003
+      ],
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.06,
+      "scheduler": "linear",
+      "max_grad_norm": 1.0,
+      "precision": "fp16",
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "eval": {
+      "select_by": "tune_accuracy",
+      "metrics": [
+        "accuracy",
+        "macro_f1"
+      ]
+    }
+  },
+  "checks": {
+    "finite_loss": true,
+    "grads_only_where_intended": true,
+    "reload_max_abs_diff": 0.0,
+    "reload_within_tol": true
+  },
+  "param_counts": {
+    "lora": 294912,
+    "head": 649805,
+    "other_trainable": 0,
+    "trainable": 944717,
+    "total": 125649562
+  },
+  "losses": [
+    4.35986328125,
+    4.3477783203125,
+    4.3809814453125,
+    4.357177734375,
+    4.3662109375,
+    4.34423828125,
+    4.346435546875,
+    4.3748779296875,
+    4.358642578125,
+    4.36419677734375,
+    4.3248291015625,
+    4.34228515625,
+    4.3704833984375,
+    4.35919189453125,
+    4.33203125,
+    4.3802490234375,
+    4.3448486328125,
+    4.3138427734375,
+    4.3424072265625,
+    4.344482421875
+  ],
+  "step_times": [
+    0.7380750520001129,
+    0.17045969800005878,
+    0.16588658599994233,
+    0.16558369399990625,
+    0.16260735900004875,
+    0.1690149379999184,
+    0.16470507099984388,
+    0.1669986639999479,
+    0.16432383400001527,
+    0.1630283720000989,
+    0.16935869999997522,
+    0.16156253500003004,
+    0.16571756999996978,
+    0.1653425139998035,
+    0.1660934389999511,
+    0.16128724100008185,
+    0.16335759500020686,
+    0.16255148599998392,
+    0.16465593299994907,
+    0.16133643200009828
+  ],
+  "steps_per_epoch": 250,
+  "passed": true
+}
