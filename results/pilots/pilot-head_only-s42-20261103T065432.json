@@ -1,0 +1,130 @@
+{
+  "ledger_row": {
+    "run_id": "pilot-head_only-s42-20261103T065432",
+    "timestamp_utc": "2026-11-03T06:54:33+00:00",
+    "phase": "pilot",
+    "experiment": "E1",
+    "config": "configs/banking77/head_only.yaml",
+    "method": "head_only",
+    "rank": "",
+    "alpha": "",
+    "seed": 42,
+    "lr": 0.0001,
+    "steps": 20,
+    "status": "completed",
+    "final_loss": 4.3679,
+    "peak_alloc_mb_first_step": 505.6,
+    "peak_alloc_mb_steady": 516.2,
+    "peak_reserved_mb_steady": 558.0,
+    "mean_step_s": 0.064,
+    "trainable_params": 649805,
+    "checkpoint_mb": 2.5,
+    "reload_max_abs_diff": "0.00e+00",
+    "projected_run_gpu_h": 0.02,
+    "device": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "notes": ""
+  },
+  "run_id": "pilot-head_only-s42-20261103T065432",
+  "config": {
+    "experiment": "E1",
+    "task": "banking77",
+    "model": {
+      "name": "FacebookAI/roberta-base",
+      "revision": "main"
+    },
+    "data": {
+      "manifest_dir": "manifests/banking77",
+      "raw_dir": "data/raw",
+      "max_len": 128
+    },
+    "method": "head_only",
+    "train": {
+      "epochs": 5,
+      "micro_batch": 8,
+      "grad_accum": 4,
+      "learning_rates": [
+        0.0001,
+        0.0003
+      ],
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.06,
+      "scheduler": "linear",
+      "max_grad_norm": 1.0,
+      "precision": "fp16",
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "eval": {
+      "select_by": "tune_accuracy",
+      "metrics": [
+        "accuracy",
+        "macro_f1"
+      ]
+    }
+  },
+  "checks": {
+    "finite_loss": true,
+    "grads_only_where_intended": true,
+    "reload_max_abs_diff": 0.0,
+    "reload_within_tol": true
+  },
+  "param_counts": {
+    "lora": 0,
+    "head": 649805,
+    "other_trainable": 0,
+    "trainable": 649805,
+    "total": 124704845
+  },
+  "losses": [
+    4.34326171875,
+    4.39208984375,
+    4.3863525390625,
+    4.380126953125,
+    4.36083984375,
+    4.353271484375,
+    4.3489990234375,
+    4.37744140625,
+    4.33544921875,
+    4.3626708984375,
+    4.32525634765625,
+    4.3377685546875,
+    4.3697509765625,
+    4.34710693359375,
+    4.3087158203125,
+    4.3714599609375,
+    4.3592529296875,
+    4.3284912109375,
+    4.3355712890625,
+    4.367919921875
+  ],
+  "step_times": [
+    0.6252894319999882,
+    0.06648806500004412,
+    0.06321731100001671,
+    0.06484564300001239,
+    0.06563064699997767,
+    0.0640679990000308,
+    0.0633512249999626,
+    0.06337000900003886,
+    0.06429713200003562,
+    0.06400203200001897,
+    0.06714691100000891,
+    0.06387723599999617,
+    0.06197634700004073,
+    0.06074761000002127,
+    0.061986949000015557,
+    0.06217894600001728,
+    0.06464223999995511,
+    0.06492136200000687,
+    0.06370079100003068,
+    0.06568552499999214
+  ],
+  "steps_per_epoch": 250,
+  "passed": true
+}

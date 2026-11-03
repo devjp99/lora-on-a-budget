@@ -1,0 +1,130 @@
+{
+  "ledger_row": {
+    "run_id": "pilot-full_ft-s42-20261103T065411",
+    "timestamp_utc": "2026-11-03T06:54:11+00:00",
+    "phase": "pilot",
+    "experiment": "E1",
+    "config": "configs/banking77/full_ft.yaml",
+    "method": "full_ft",
+    "rank": "",
+    "alpha": "",
+    "seed": 42,
+    "lr": 1e-05,
+    "steps": 20,
+    "status": "completed",
+    "final_loss": 4.3739,
+    "peak_alloc_mb_first_step": 2405.3,
+    "peak_alloc_mb_steady": 2407.5,
+    "peak_reserved_mb_steady": 2708.0,
+    "mean_step_s": 0.22,
+    "trainable_params": 124704845,
+    "checkpoint_mb": 475.7,
+    "reload_max_abs_diff": "0.00e+00",
+    "projected_run_gpu_h": 0.08,
+    "device": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "notes": ""
+  },
+  "run_id": "pilot-full_ft-s42-20261103T065411",
+  "config": {
+    "experiment": "E1",
+    "task": "banking77",
+    "model": {
+      "name": "FacebookAI/roberta-base",
+      "revision": "main"
+    },
+    "data": {
+      "manifest_dir": "manifests/banking77",
+      "raw_dir": "data/raw",
+      "max_len": 128
+    },
+    "method": "full_ft",
+    "train": {
+      "epochs": 5,
+      "micro_batch": 8,
+      "grad_accum": 4,
+      "learning_rates": [
+        1e-05,
+        3e-05
+      ],
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.06,
+      "scheduler": "linear",
+      "max_grad_norm": 1.0,
+      "precision": "fp16",
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "eval": {
+      "select_by": "tune_accuracy",
+      "metrics": [
+        "accuracy",
+        "macro_f1"
+      ]
+    }
+  },
+  "checks": {
+    "finite_loss": true,
+    "grads_only_where_intended": true,
+    "reload_max_abs_diff": 0.0,
+    "reload_within_tol": true
+  },
+  "param_counts": {
+    "lora": 0,
+    "head": 649805,
+    "other_trainable": 124055040,
+    "trainable": 124704845,
+    "total": 124704845
+  },
+  "losses": [
+    4.34326171875,
+    4.391845703125,
+    4.387451171875,
+    4.378173828125,
+    4.3707275390625,
+    4.36309814453125,
+    4.344970703125,
+    4.3656005859375,
+    4.336669921875,
+    4.3699951171875,
+    4.316650390625,
+    4.354248046875,
+    4.365478515625,
+    4.3701171875,
+    4.3211669921875,
+    4.37841796875,
+    4.3497314453125,
+    4.3294677734375,
+    4.3514404296875,
+    4.3739013671875
+  ],
+  "step_times": [
+    2.389316615000041,
+    0.2130694319999975,
+    0.20264193499997418,
+    0.2107435940000073,
+    0.20348425599996744,
+    0.2018930170000317,
+    0.20255913800002645,
+    0.31112877800001115,
+    0.20979176200000893,
+    0.2080742470000132,
+    0.2048870169999759,
+    0.20786499899998034,
+    0.21328588300002593,
+    0.21626840799996216,
+    0.22010524400002396,
+    0.23229151699996464,
+    0.21540104600001087,
+    0.22379798100001835,
+    0.21820242399996914,
+    0.21963285399999677
+  ],
+  "steps_per_epoch": 250,
+  "passed": true
+}
