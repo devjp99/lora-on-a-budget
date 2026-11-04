@@ -51,3 +51,18 @@ python scripts/pilot_banking77.py --config configs/banking77/lora_r8.yaml
 - `tests/`: loader validation and smoke tests
 - `configs/banking77/*.yaml`: settings from proposal Table 5
 - `notebooks/week1_banking77_pilot.ipynb`: runs all of the above on a Kaggle T4
+
+## Week 2: learning-rate search (E1, seed 42)
+
+Each run trains for 5 epochs, scores the tuning set (accuracy, macro-F1) after every epoch,
+and keeps the best epoch (ties go to the earlier epoch). The test set is not used.
+
+```bash
+python scripts/train_banking77.py --config configs/banking77/lora_r8.yaml --lr 1e-4 --seed 42 --phase lr_search
+python scripts/select_lr_banking77.py      # writes results/selected_lr_banking77.json
+```
+
+- `results/train_ledger.csv`: one row per run (status, best epoch, tuning scores, memory, time)
+- `results/runs/<run_id>.json`: per-epoch log for each run
+- If a session stops, rerun the same command with `--resume`
+- Learning-rate rule: highest tuning accuracy; ties go to the earlier best epoch, then the smaller learning rate
