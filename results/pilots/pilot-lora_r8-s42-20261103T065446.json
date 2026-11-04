@@ -1,0 +1,82 @@
+{
+  "ledger_row": {
+    "run_id": "pilot-lora_r8-s42-20261103T065446",
+    "timestamp_utc": "2026-11-03T06:54:47+00:00",
+    "phase": "pilot",
+    "experiment": "E1",
+    "config": "configs/banking77/lora_r8.yaml",
+    "method": "lora",
+    "rank": 8,
+    "alpha": 16,
+    "seed": 42,
+    "lr": 0.0001,
+    "steps": 20,
+    "status": "failed_code_or_data",
+    "final_loss": "",
+    "peak_alloc_mb_first_step": "",
+    "peak_alloc_mb_steady": "",
+    "peak_reserved_mb_steady": "",
+    "mean_step_s": "",
+    "trainable_params": "",
+    "checkpoint_mb": "",
+    "reload_max_abs_diff": "",
+    "projected_run_gpu_h": "",
+    "device": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "notes": "ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported"
+  },
+  "run_id": "pilot-lora_r8-s42-20261103T065446",
+  "config": {
+    "experiment": "E1",
+    "task": "banking77",
+    "model": {
+      "name": "FacebookAI/roberta-base",
+      "revision": "main"
+    },
+    "data": {
+      "manifest_dir": "manifests/banking77",
+      "raw_dir": "data/raw",
+      "max_len": 128
+    },
+    "method": "lora",
+    "lora": {
+      "rank": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "query",
+        "value"
+      ]
+    },
+    "train": {
+      "epochs": 5,
+      "micro_batch": 8,
+      "grad_accum": 4,
+      "learning_rates": [
+        0.0001,
+        0.0003
+      ],
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.06,
+      "scheduler": "linear",
+      "max_grad_norm": 1.0,
+      "precision": "fp16",
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "eval": {
+      "select_by": "tune_accuracy",
+      "metrics": [
+        "accuracy",
+        "macro_f1"
+      ]
+    }
+  },
+  "checks": {},
+  "error": "ImportError('Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported')"
+}

@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- lora-on-a-budget project files (never commit) ----
+data/raw/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+wandb/
+*.token

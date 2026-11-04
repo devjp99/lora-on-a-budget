@@ -1,0 +1,25 @@
+# BANKING77 / RoBERTa-base -- proposal Table 5 and Sections 6.1, 6.3
+experiment: E1
+task: banking77
+model:
+  name: FacebookAI/roberta-base
+  revision: main            # pin to a commit hash after the first pilot
+data:
+  manifest_dir: manifests/banking77
+  raw_dir: data/raw
+  max_len: 128
+method: full_ft
+train:
+  epochs: 5
+  micro_batch: 8
+  grad_accum: 4             # effective batch 32
+  learning_rates: [1.0e-5, 3.0e-5]
+  weight_decay: 0.01        # not applied to bias or LayerNorm
+  warmup_ratio: 0.06
+  scheduler: linear
+  max_grad_norm: 1.0
+  precision: fp16
+  seeds: [42, 43, 44]
+eval:
+  select_by: tune_accuracy  # ties: earlier epoch, then smaller learning rate
+  metrics: [accuracy, macro_f1]

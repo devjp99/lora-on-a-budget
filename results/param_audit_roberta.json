@@ -1,0 +1,57 @@
+{
+  "all_match": true,
+  "rows": [
+    {
+      "method": "full_ft",
+      "rank": null,
+      "lora": 0,
+      "head": 649805,
+      "other_trainable": 124055040,
+      "trainable": 124704845,
+      "total": 124704845
+    },
+    {
+      "method": "head_only",
+      "rank": null,
+      "lora": 0,
+      "head": 649805,
+      "other_trainable": 0,
+      "trainable": 649805,
+      "total": 124704845,
+      "head_matches_table1": true
+    },
+    {
+      "method": "lora",
+      "rank": 4,
+      "lora": 147456,
+      "head": 649805,
+      "other_trainable": 0,
+      "trainable": 797261,
+      "total": 125502106,
+      "lora_matches_table1": true,
+      "head_matches_table1": true
+    },
+    {
+      "method": "lora",
+      "rank": 8,
+      "lora": 294912,
+      "head": 649805,
+      "other_trainable": 0,
+      "trainable": 944717,
+      "total": 125649562,
+      "lora_matches_table1": true,
+      "head_matches_table1": true
+    },
+    {
+      "method": "lora",
+      "rank": 16,
+      "lora": 589824,
+      "head": 649805,
+      "other_trainable": 0,
+      "trainable": 1239629,
+      "total": 125944474,
+      "lora_matches_table1": true,
+      "head_matches_table1": true
+    }
+  ]
+}
