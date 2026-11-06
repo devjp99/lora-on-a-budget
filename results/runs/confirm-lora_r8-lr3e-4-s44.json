@@ -1,0 +1,156 @@
+{
+  "ledger_row": {
+    "run_id": "confirm-lora_r8-lr3e-4-s44",
+    "timestamp_utc": "2026-11-06T02:30:25+00:00",
+    "phase": "confirm",
+    "experiment": "E1",
+    "config": "configs/banking77/lora_r8.yaml",
+    "method": "lora",
+    "rank": 8,
+    "alpha": 16,
+    "seed": 44,
+    "lr": 0.0003,
+    "epochs": 5,
+    "status": "completed",
+    "best_epoch": 5,
+    "tune_accuracy": 90.055,
+    "tune_macro_f1": 90.09,
+    "trainable_params": 944717,
+    "peak_alloc_mb": 930.5,
+    "peak_reserved_mb": 1142.0,
+    "load_s": 1.2,
+    "train_s": 214.9,
+    "eval_s": 6.9,
+    "train_examples_per_s": 185.4,
+    "checkpoint_mb": 3.7,
+    "resumed": false,
+    "device": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "notes": ""
+  },
+  "run_id": "confirm-lora_r8-lr3e-4-s44",
+  "config": {
+    "experiment": "E1",
+    "task": "banking77",
+    "model": {
+      "name": "FacebookAI/roberta-base",
+      "revision": "main"
+    },
+    "data": {
+      "manifest_dir": "manifests/banking77",
+      "raw_dir": "data/raw",
+      "max_len": 128
+    },
+    "method": "lora",
+    "lora": {
+      "rank": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "query",
+        "value"
+      ]
+    },
+    "train": {
+      "epochs": 5,
+      "micro_batch": 8,
+      "grad_accum": 4,
+      "learning_rates": [
+        0.0001,
+        0.0003
+      ],
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.06,
+      "scheduler": "linear",
+      "max_grad_norm": 1.0,
+      "precision": "fp16",
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "eval": {
+      "select_by": "tune_accuracy",
+      "metrics": [
+        "accuracy",
+        "macro_f1"
+      ]
+    }
+  },
+  "args": {
+    "config": "configs/banking77/lora_r8.yaml",
+    "lr": 0.0003,
+    "seed": 44,
+    "phase": "confirm",
+    "ckpt_root": "/kaggle/working/checkpoints",
+    "resume": false,
+    "epochs": null,
+    "offline": false,
+    "max_train_examples": null,
+    "max_tune_examples": null,
+    "keep_last": false,
+    "stop_after_epoch": null
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 2.5494,
+      "tune_accuracy": 81.009,
+      "tune_macro_f1": 80.254,
+      "train_s": 43.3,
+      "eval_s": 1.5,
+      "examples_per_s": 184.1
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6114,
+      "tune_accuracy": 88.206,
+      "tune_macro_f1": 88.319,
+      "train_s": 42.8,
+      "eval_s": 1.4,
+      "examples_per_s": 186.4
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.4066,
+      "tune_accuracy": 89.505,
+      "tune_macro_f1": 89.548,
+      "train_s": 43.0,
+      "eval_s": 1.4,
+      "examples_per_s": 185.3
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.3258,
+      "tune_accuracy": 89.955,
+      "tune_macro_f1": 90.045,
+      "train_s": 43.0,
+      "eval_s": 1.4,
+      "examples_per_s": 185.2
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.2797,
+      "tune_accuracy": 90.055,
+      "tune_macro_f1": 90.09,
+      "train_s": 42.8,
+      "eval_s": 1.4,
+      "examples_per_s": 186.1
+    }
+  ],
+  "param_counts": {
+    "lora": 294912,
+    "head": 649805,
+    "other_trainable": 0,
+    "trainable": 944717,
+    "total": 125649562
+  },
+  "best": {
+    "epoch": 5,
+    "accuracy": 90.055,
+    "macro_f1": 90.09
+  }
+}
