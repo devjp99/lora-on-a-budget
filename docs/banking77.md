@@ -66,3 +66,29 @@ python scripts/select_lr_banking77.py      # writes results/selected_lr_banking7
 - `results/runs/<run_id>.json`: per-epoch log for each run
 - If a session stops, rerun the same command with `--resume`
 - Learning-rate rule: highest tuning accuracy; ties go to the earlier best epoch, then the smaller learning rate
+
+### Week 2 results (seed 42, tuning set, one T4)
+
+| Method | Picked LR | Tune accuracy | Tune macro-F1 | Best epoch |
+|---|---|---|---|---|
+| Full fine-tuning | 3e-5 | 91.85 | 91.78 | 5 |
+| LoRA r=8 | 3e-4 | 90.45 | 90.56 | 5 |
+| Head-only | 3e-4 | 22.14 | 15.86 | 5 |
+
+Head-only is under-trained, not broken. Its training loss only went from 4.31 to 3.88
+in 5 epochs (random guessing over 77 classes is ln 77 = 4.34), and tuning accuracy was
+still going up at epoch 5.
+
+## Week 3: seed confirmation (E1) and rank sweep (E3)
+
+- Confirmation: each method reruns its picked LR with seeds 43 and 44 (`--phase confirm`).
+  The seed-42 pick counts as the first seed, so every method has 3 seeds.
+- E3: LoRA r=4 and r=16 at seed 42 with the LoRA r=8 learning rate (`--phase rank_sweep`).
+  Rank 8 reuses the E1 seed-42 run.
+- Notebook: `notebooks/week3_banking77_confirm_e3.ipynb`
+
+**Deviation (supplementary check, added after the LR search):** we also trained head-only
+at 1e-3 and 3e-3 (seed 42, `--phase supplementary`), because the pre-registered grid
+(1e-4, 3e-4) left it under-trained. These runs are never used by the LR picker and are
+reported in a separate row. The pre-registered head-only pick (3e-4) stays the main E1
+result. The test set has still not been used.
