@@ -139,7 +139,7 @@ def main() -> None:
     ap.add_argument("--config", required=True)
     ap.add_argument("--lr", type=float, required=True)
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--phase", default="lr_search", choices=["lr_search", "confirm", "rank_sweep", "debug"])
+    ap.add_argument("--phase", default="lr_search", choices=["lr_search", "confirm", "rank_sweep", "supplementary", "debug"])
     ap.add_argument("--ckpt-root", default="checkpoints", help="NOT committed (.gitignore)")
     ap.add_argument("--resume", action="store_true", help="continue from the last saved epoch")
     ap.add_argument("--epochs", type=int, default=None, help="override; for quick tests only")
