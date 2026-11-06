@@ -1,0 +1,49 @@
+# Candidate settings; resolved model SHA and manifest hash saved by each pilot.
+experiment: E2
+task: billsum
+owner: Jainish Patel
+method: dora
+model:
+  name: Qwen/Qwen2.5-0.5B
+  revision: 060db6499f32faf8b98477b0a26969ef7d8b9987
+data:
+  raw_dir: data/raw/billsum
+  manifest_dir: manifests/billsum
+  max_prompt: 1024
+  max_target: 256
+  subset_seed: 2026
+train:
+  epochs: 3
+  micro_batch: 1
+  grad_accum: 16
+  learning_rates:
+  - 0.0001
+  - 0.0003
+  weight_decay: 0.01
+  warmup_ratio: 0.06
+  scheduler: linear
+  max_grad_norm: 1.0
+  precision: fp16
+  seeds:
+  - 42
+  - 43
+  - 44
+  gradient_checkpointing: true
+  use_cache: false
+lora:
+  rank: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+eval:
+  select_by: tune_rougeL
+  do_sample: false
+  num_beams: 1
+  max_new_tokens: 256

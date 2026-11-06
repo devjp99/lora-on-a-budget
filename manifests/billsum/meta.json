@@ -1,0 +1,51 @@
+{
+  "dataset": "FiscalNote/billsum",
+  "revision": "3d8510441c06a3d9dfb32eb0d7f80151730bcc4f",
+  "license": "CC0-1.0",
+  "subset_seed": 2026,
+  "selection_algorithm": "python.Random shuffle train then test",
+  "raw_sha256": {
+    "train": "7ca4e515ad7502ef579a055c2d64e6dfa0d64200017c15bca00f323a34cd2ae3",
+    "test": "2733cb656a2a6fbff0fc012ca50bbf159615ff6451c0adb229884bbd474780b3"
+  },
+  "raw_counts": {
+    "train": 18949,
+    "test": 3269
+  },
+  "schemas": {
+    "train": {
+      "text": "object",
+      "summary": "object",
+      "title": "object"
+    },
+    "test": {
+      "text": "object",
+      "summary": "object",
+      "title": "object"
+    }
+  },
+  "planned_counts": {
+    "train": 3000,
+    "tune": 500,
+    "test": 500
+  },
+  "final_counts": {
+    "train": 3000,
+    "tune": 500,
+    "test": 500
+  },
+  "duplicates_removed": {
+    "train": 0,
+    "tune": 0
+  },
+  "repeats_within_split": {
+    "train": 1,
+    "tune": 0,
+    "test": 0
+  },
+  "manifest_sha256": {
+    "train": "e55062eb52ec35510a64d62b764272274b2fce635d76a3f19c9a2d52dad68170",
+    "tune": "6ea35142a32270cbb1f553d6acc379080addbca81cd3a429b6da2ff7d9154ecc",
+    "test": "214515322c3c15e1923a96a1f3fd27c93c062d4092ba88aa06c8a5f5ba419ed9"
+  }
+}

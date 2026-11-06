@@ -1,0 +1,12 @@
+# Isolated decoder candidate environment; CPU-tested, T4 compatibility still pending.
+# Keep separate from Kunj's requirements.txt until both owners validate one environment.
+torch==2.5.1
+transformers==4.46.3
+peft==0.14.0
+pyarrow==18.1.0
+bitsandbytes==0.45.0
+accelerate==1.15.0
+huggingface-hub==0.36.2
+pandas==2.2.3
+PyYAML==6.0.3
+pytest==9.2.0
