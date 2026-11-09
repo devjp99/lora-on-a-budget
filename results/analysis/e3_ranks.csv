@@ -1,0 +1,4 @@
+rank,test_accuracy,test_macro_f1,trainable_params,peak_alloc_mb,peak_reserved_mb,train_s,train_examples_per_s,checkpoint_mb,run_id
+4.0,91.591,91.601,797261,926.8,1138.0,217.3,183.4,3.1,rank_sweep-lora_r4-lr3e-4-s42
+8.0,91.591,91.597,944717,929.4,1142.0,209.9,189.8,3.7,lr_search-lora_r8-lr3e-4-s42
+16.0,92.078,92.079,1239629,934.8,1150.0,214.2,186.1,4.8,rank_sweep-lora_r16-lr3e-4-s42

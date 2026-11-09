@@ -1,0 +1,14 @@
+run_id,group,setup,method,seed,lr,rank,logged_tune_accuracy,commit,timestamp_utc,notes,reloaded_tune_accuracy,test_accuracy,test_macro_f1,status
+lr_search-full_ft-lr3e-5-s42,E1,full_ft,full_ft,42,3e-05,,91.854,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:44:34+00:00,,91.854,93.182,93.158,completed
+confirm-full_ft-lr3e-5-s43,E1,full_ft,full_ft,43,3e-05,,92.154,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:44:47+00:00,,92.154,92.955,92.937,completed
+confirm-full_ft-lr3e-5-s44,E1,full_ft,full_ft,44,3e-05,,91.654,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:44:53+00:00,,91.654,92.89,92.902,completed
+lr_search-lora_r8-lr3e-4-s42,E1,lora_r8,lora,42,0.0003,8,90.455,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:00+00:00,,90.455,91.591,91.597,completed
+confirm-lora_r8-lr3e-4-s43,E1,lora_r8,lora,43,0.0003,8,90.505,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:03+00:00,,90.505,91.721,91.726,completed
+confirm-lora_r8-lr3e-4-s44,E1,lora_r8,lora,44,0.0003,8,90.055,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:07+00:00,,90.055,91.364,91.362,completed
+lr_search-head_only-lr3e-4-s42,E1,head_only,head_only,42,0.0003,,22.139,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:11+00:00,,22.139,20.422,15.89,completed
+confirm-head_only-lr3e-4-s43,E1,head_only,head_only,43,0.0003,,21.239,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:14+00:00,,21.239,19.805,15.32,completed
+confirm-head_only-lr3e-4-s44,E1,head_only,head_only,44,0.0003,,25.587,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:17+00:00,,25.587,23.994,18.383,completed
+rank_sweep-lora_r4-lr3e-4-s42,E3,lora_r4,lora,42,0.0003,4,90.005,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:21+00:00,,90.005,91.591,91.601,completed
+rank_sweep-lora_r16-lr3e-4-s42,E3,lora_r16,lora,42,0.0003,16,90.655,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:24+00:00,,90.655,92.078,92.079,completed
+supplementary-head_only-lr1e-3-s42,supplementary,head_only,head_only,42,0.001,,56.172,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:28+00:00,,56.172,55.325,52.433,completed
+supplementary-head_only-lr3e-3-s42,supplementary,head_only,head_only,42,0.003,,71.914,80db8aaf6372b73b8d730eeeaf301ab3587e5a0f,2026-11-09T21:45:31+00:00,,71.914,72.37,71.786,completed
