@@ -1,0 +1,71 @@
+{
+  "full_ft": {
+    "config": "configs/banking77/full_ft.yaml",
+    "method": "full_ft",
+    "lr": 3e-05,
+    "seed42_run_id": "lr_search-full_ft-lr3e-5-s42",
+    "tune_accuracy": 91.854,
+    "tune_macro_f1": 91.775,
+    "best_epoch": 5,
+    "candidates": [
+      {
+        "lr": 3e-05,
+        "tune_accuracy": 91.854,
+        "tune_macro_f1": 91.775,
+        "best_epoch": 5
+      },
+      {
+        "lr": 1e-05,
+        "tune_accuracy": 85.457,
+        "tune_macro_f1": 83.62,
+        "best_epoch": 5
+      }
+    ]
+  },
+  "head_only": {
+    "config": "configs/banking77/head_only.yaml",
+    "method": "head_only",
+    "lr": 0.0003,
+    "seed42_run_id": "lr_search-head_only-lr3e-4-s42",
+    "tune_accuracy": 22.139,
+    "tune_macro_f1": 15.857,
+    "best_epoch": 5,
+    "candidates": [
+      {
+        "lr": 0.0003,
+        "tune_accuracy": 22.139,
+        "tune_macro_f1": 15.857,
+        "best_epoch": 5
+      },
+      {
+        "lr": 0.0001,
+        "tune_accuracy": 6.797,
+        "tune_macro_f1": 2.187,
+        "best_epoch": 4
+      }
+    ]
+  },
+  "lora_r8": {
+    "config": "configs/banking77/lora_r8.yaml",
+    "method": "lora",
+    "lr": 0.0003,
+    "seed42_run_id": "lr_search-lora_r8-lr3e-4-s42",
+    "tune_accuracy": 90.455,
+    "tune_macro_f1": 90.565,
+    "best_epoch": 5,
+    "candidates": [
+      {
+        "lr": 0.0003,
+        "tune_accuracy": 90.455,
+        "tune_macro_f1": 90.565,
+        "best_epoch": 5
+      },
+      {
+        "lr": 0.0001,
+        "tune_accuracy": 83.958,
+        "tune_macro_f1": 83.653,
+        "best_epoch": 5
+      }
+    ]
+  }
+}
