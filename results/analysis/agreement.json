@@ -1,0 +1,9 @@
+{
+  "same_prediction": 94.31,
+  "both_correct": 90.06,
+  "only_full_ft_correct": 2.94,
+  "only_lora_correct": 1.49,
+  "both_wrong": 5.5,
+  "both_wrong_same_answer": 4.24,
+  "note": "percent of (test example, seed) pairs; seeds matched"
+}

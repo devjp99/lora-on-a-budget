@@ -1,0 +1,4 @@
+setup,test_accuracy_mean,test_accuracy_std,test_macro_f1_mean,test_macro_f1_std,trainable_params_mean,trainable_params_std,peak_alloc_mb_mean,peak_alloc_mb_std,peak_reserved_mb_mean,peak_reserved_mb_std,train_s_mean,train_s_std,train_examples_per_s_mean,train_examples_per_s_std,checkpoint_mb_mean,checkpoint_mb_std
+full_ft,93.01,0.15,93.0,0.14,124704845.0,0.0,2451.27,1.96,2711.33,11.55,264.73,1.46,150.47,0.83,475.8,0.0
+lora_r8,91.56,0.18,91.56,0.18,944717.0,0.0,930.0,0.56,1142.0,0.0,216.23,7.09,184.4,5.96,3.7,0.0
+head_only,21.41,2.26,16.53,1.63,649805.0,0.0,637.4,0.0,804.0,0.0,78.63,0.38,507.03,2.08,2.5,0.0

@@ -1,0 +1,10 @@
+setup,seed,lr,test_accuracy,test_macro_f1,run_id
+full_ft,42,3e-05,93.182,93.158,lr_search-full_ft-lr3e-5-s42
+full_ft,43,3e-05,92.955,92.937,confirm-full_ft-lr3e-5-s43
+full_ft,44,3e-05,92.89,92.902,confirm-full_ft-lr3e-5-s44
+head_only,42,0.0003,20.422,15.89,lr_search-head_only-lr3e-4-s42
+head_only,43,0.0003,19.805,15.32,confirm-head_only-lr3e-4-s43
+head_only,44,0.0003,23.994,18.383,confirm-head_only-lr3e-4-s44
+lora_r8,42,0.0003,91.591,91.597,lr_search-lora_r8-lr3e-4-s42
+lora_r8,43,0.0003,91.721,91.726,confirm-lora_r8-lr3e-4-s43
+lora_r8,44,0.0003,91.364,91.362,confirm-lora_r8-lr3e-4-s44

@@ -1,0 +1,46 @@
+{
+  "lora_r8 - full_ft | accuracy": {
+    "metric": "accuracy",
+    "diff": -1.45,
+    "ci_low": -2.132,
+    "ci_high": -0.79,
+    "n_boot": 10000,
+    "n_seeds": 3,
+    "n_examples": 3080,
+    "bootstrap_seed": 2026,
+    "decision": "inconclusive"
+  },
+  "lora_r8 - full_ft | macro_f1": {
+    "metric": "macro_f1",
+    "diff": -1.438,
+    "ci_low": -2.143,
+    "ci_high": -0.786,
+    "n_boot": 10000,
+    "n_seeds": 3,
+    "n_examples": 3080,
+    "bootstrap_seed": 2026,
+    "decision": "inconclusive"
+  },
+  "head_only - full_ft | accuracy": {
+    "metric": "accuracy",
+    "diff": -71.602,
+    "ci_low": -74.058,
+    "ci_high": -68.799,
+    "n_boot": 10000,
+    "n_seeds": 3,
+    "n_examples": 3080,
+    "bootstrap_seed": 2026,
+    "decision": "worse than the 1-point limit"
+  },
+  "head_only - full_ft | macro_f1": {
+    "metric": "macro_f1",
+    "diff": -76.468,
+    "ci_low": -78.427,
+    "ci_high": -74.418,
+    "n_boot": 10000,
+    "n_seeds": 3,
+    "n_examples": 3080,
+    "bootstrap_seed": 2026,
+    "decision": "worse than the 1-point limit"
+  }
+}

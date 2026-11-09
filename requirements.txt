@@ -5,5 +5,7 @@ peft==0.21.2
 pandas==3.0.5
 scikit-learn==1.9.1
 PyYAML>=6.0
+matplotlib>=3.8
+pyarrow>=15
 pytest>=8.0
 # Jainish: add bitsandbytes / evaluate / rouge-score pins for the decoder side here
