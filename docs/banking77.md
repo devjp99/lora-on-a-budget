@@ -92,3 +92,39 @@ at 1e-3 and 3e-3 (seed 42, `--phase supplementary`), because the pre-registered 
 (1e-4, 3e-4) left it under-trained. These runs are never used by the LR picker and are
 reported in a separate row. The pre-registered head-only pick (3e-4) stays the main E1
 result. The test set has still not been used.
+
+### Week 3 results (tuning set, one T4)
+
+E1, 3 seeds (seed-42 pick + seeds 43, 44), mean ± sample std:
+
+| Method | Tune accuracy | Tune macro-F1 | Peak alloc MB | Train s (5 epochs) |
+|---|---|---|---|---|
+| Full fine-tuning | 91.89 ± 0.25 | 91.71 ± 0.22 | 2,451 | 265 |
+| LoRA r=8 | 90.34 ± 0.25 | 90.38 ± 0.25 | 930 | 216 |
+| Head-only | 22.99 ± 2.30 | 16.31 ± 2.07 | 637 | 79 |
+
+E3 (seed 42, LR 3e-4): rank 4 / 8 / 16 gave 90.01 / 90.46 / 90.66 tuning accuracy,
+with nearly the same memory (927 / 929 / 935 MB) and time (217 / 210 / 214 s).
+Supplementary head-only (seed 42): 1e-3 gave 56.17 and 3e-3 gave 71.91, still rising at epoch 5.
+
+## Week 4: final test evaluation (run once) and analysis
+
+The analysis code below was committed **before** the test set was used. The eval script
+refuses to run on uncommitted code and refuses to overwrite earlier test predictions.
+
+```bash
+python scripts/eval_test_banking77.py --ckpt-roots <week2 checkpoints> <week3 checkpoints>
+python scripts/analyze_banking77.py
+```
+
+- `scripts/eval_test_banking77.py`: rebuilds each of the 13 locked runs (E1 9, E3 2,
+  supplementary 2), loads its best checkpoint, re-scores the tuning set to prove the right
+  weights loaded (must match the training log within 0.15 points), then scores the test set
+  once and saves every prediction to `results/test/preds/`.
+- `scripts/analyze_banking77.py`: per-seed scores, mean and sample std, cost columns,
+  LoRA minus full FT with a 95% hierarchical bootstrap (10,000 resamples over matched seeds
+  and test examples), the one-point decision rule (Section 9.1), the rank table,
+  per-intent F1, the most confused intent pairs, and two figures. Output: `results/analysis/`.
+- `src/lora_budget/analysis/stats.py`: macro-F1, the bootstrap, and the decision rule.
+- Notebook: `notebooks/week4_banking77_test_eval.ipynb` (attach the Week 2 and Week 3
+  Kaggle notebook outputs as inputs; that is where the checkpoints are).
