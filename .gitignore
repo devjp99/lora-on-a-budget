@@ -228,3 +228,4 @@ checkpoints/
 *.ckpt
 wandb/
 *.token
+.DS_Store
