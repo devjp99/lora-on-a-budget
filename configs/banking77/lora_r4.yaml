@@ -3,7 +3,7 @@ experiment: E3
 task: banking77
 model:
   name: FacebookAI/roberta-base
-  revision: main            # pin to a commit hash after the first pilot
+  revision: e2da8e2f811d1448a5b465c236feacd80ffbac7b  # = "main" during all our runs (last changed 2024-02-19)
 data:
   manifest_dir: manifests/banking77
   raw_dir: data/raw
