@@ -1,0 +1,14 @@
+{
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "git_commit": "64317e35ecd2ed2eac4ff98aafabb78c129a699d",
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.20.2",
+    "peft": "0.21.2",
+    "pandas": "2.3.3",
+    "pyarrow": "23.0.1",
+    "pytest": "8.4.2"
+  },
+  "audit_device": "cpu",
+  "note": "Removed incompatible torchao 0.10.0 before successful audit."
+}
