@@ -128,3 +128,37 @@ python scripts/analyze_banking77.py
 - `src/lora_budget/analysis/stats.py`: macro-F1, the bootstrap, and the decision rule.
 - Notebook: `notebooks/week4_banking77_test_eval.ipynb` (attach the Week 2 and Week 3
   Kaggle notebook outputs as inputs; that is where the checkpoints are).
+
+## Final test results (test set used once)
+
+Test set: 3,080 examples. The evaluation and analysis code was locked at commit `80db8aa`
+before the test set was scored. Every reloaded checkpoint reproduced its logged tuning
+accuracy exactly. Full tables: `results/analysis/summary.md`.
+
+| Setup | Test accuracy | Test macro-F1 | Peak alloc MB | Train s | Checkpoint MB |
+|---|---|---|---|---|---|
+| Full fine-tuning | 93.01 ± 0.15 | 93.00 ± 0.14 | 2,451 | 265 | 475.8 |
+| LoRA r=8 | 91.56 ± 0.18 | 91.56 ± 0.18 | 930 | 216 | 3.7 |
+| Head-only | 21.41 ± 2.26 | 16.53 ± 1.63 | 637 | 79 | 2.5 |
+
+Mean ± sample std over seeds 42, 43, 44.
+
+- **LoRA r=8 minus full FT: −1.45 points**, 95% hierarchical bootstrap interval
+  **[−2.13, −0.79]**. The whole interval is below zero, so full fine-tuning is better.
+  It crosses our pre-set −1 point limit, so under the proposal's rule it is
+  **inconclusive** whether LoRA is within one point.
+- LoRA used **2.6× less peak memory**, trained **about 1.2× faster** (184 vs 150 examples/s),
+  and saved a **129× smaller** checkpoint.
+- E3 (seed 42): rank 4 / 8 / 16 gave **91.59 / 91.59 / 92.08** test accuracy, with nearly
+  the same memory and time. One seed per rank.
+- Supplementary head-only (seed 42, outside the pre-registered grid): **55.33** at 1e-3 and
+  **72.37** at 3e-3.
+- LoRA and full fine-tuning give the same prediction on 94.3% of test examples. Most errors
+  for both are between near-duplicate intents, such as `card_arrival` vs `card_delivery_estimate`.
+
+## Model revision
+
+All runs loaded `FacebookAI/roberta-base` at revision `main`. That branch points to commit
+`e2da8e2f811d1448a5b465c236feacd80ffbac7b`, last changed on 2024-02-19, which is before any
+of our runs (November 2026). So every run used that exact version. The configs now pin this
+hash. Checked with `huggingface_hub.model_info` on November 9, 2026.
