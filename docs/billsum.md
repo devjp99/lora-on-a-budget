@@ -86,10 +86,14 @@ based on the CPU audit alone.
 
 Kunj's requirements remain unchanged.
 
-The existing `notebooks/week1_2_billsum_pilots.ipynb` is the earlier combined
-runner. Use the dedicated Week 1 notebook linked above to review the
-completed preparation checks. A separate Week 2 notebook will be prepared
-for the GPU checks.
+The notebooks are now separated by week:
+
+- [Week 1: preparation and saved verification results](../notebooks/jainish-week-1-billsum.ipynb)
+- [Week 2: draft GPU compatibility checks](../notebooks/week2_billsum_pilots.ipynb)
+
+The Week 2 notebook replaces the earlier combined runner. Its environment
+setup still needs review and updating before execution. No Week 2 GPU
+results have been recorded yet.
 
 ## Earlier candidate reproduction instructions
 
