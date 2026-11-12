@@ -20,6 +20,26 @@ def build_model(method, revision, seed=42, base_model='Qwen/Qwen2.5-0.5B', check
         checkpoint if checkpoint and method=='full_ft' else base_model, **kw)
     if method == 'qlora':
         model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+        # Normalize frozen 4-bit biases before integrity fingerprints.
+        from bitsandbytes.nn import Linear4bit
+        for name, layer in model.named_modules():
+            if isinstance(layer, Linear4bit) and layer.bias is not None:
+                bias = layer.bias
+                if bias.requires_grad:
+                    raise ValueError(f"Expected frozen QLoRA bias: {name}")
+                dtype = layer.compute_dtype
+                if dtype is None:
+                    raise ValueError(f"Missing QLoRA compute dtype: {name}")
+                if bias.dtype != dtype:
+                    converted = bias.detach().to(dtype)
+                    if not torch.equal(
+                        bias.detach().float(), converted.float()
+                    ):
+                        raise ValueError(
+                            f"Bias conversion would change values: {name}"
+                        )
+                    with torch.no_grad():
+                        bias.data = converted
     elif method != 'full_ft':
         model.requires_grad_(False)
     if method != 'full_ft':
