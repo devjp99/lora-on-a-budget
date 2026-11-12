@@ -8,6 +8,7 @@ on a single 16 GB GPU.
 - [BANKING77 / RoBERTa — Kunj](docs/banking77.md)
 - [BillSum / Qwen — Jainish](docs/billsum.md)
 - [BillSum Week 1 verification report](docs/billsum_week1.md)
+- [BillSum Week 2 GPU check report](docs/billsum_week2.md)
 
 ## BANKING77 results (complete)
 
@@ -19,11 +20,23 @@ about 1.2× faster. Details: [docs/banking77.md](docs/banking77.md).
 ## BillSum progress
 
 Week 1 preparation checks and the CPU parameter audit were verified
-in Kaggle. All 14 BillSum tests passed. The report links to the notebook,
-results, environment details, and failure/fix logs.
+in Kaggle. All 14 BillSum tests passed. The Week 1 report links to
+the notebook, results, environment details, and failure/fix logs.
 
-The four BillSum GPU training compatibility checks and the final
-shared environment lock remain pending.
+In Week 2, full fine-tuning, LoRA, DoRA, and 4-bit QLoRA each passed
+20 successful optimizer updates on one Tesla T4 GPU. All four runs
+passed checkpoint save/reload checks with a maximum absolute output
+difference of 0.0.
+
+The Week 2 report records memory and timing measurements, the QLoRA
+frozen-bias fix, the tested environment, and the session reruns.
+It links to the notebook, JSON reports, and logs.
+
+These short checks establish compatibility for the tested configuration.
+They do not establish summary quality or select a learning rate.
+
+Agreement on a shared environment with Kunj, a clean execution workflow,
+and Week 3 learning-rate selection remain pending.
 
 ## License
 
