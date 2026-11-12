@@ -1,0 +1,33 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:22,  3.50it/s]
+Loading weights:  88%|████████▊ | 256/290 [00:00<00:00, 844.59it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 694.14it/s]
+1/20: loss=1.54422
+2/20: loss=1.56047
+3/20: loss=1.39999
+4/20: loss=1.69448
+5/20: loss=1.44985
+6/20: loss=1.63392
+7/20: loss=1.65394
+8/20: loss=1.64516
+9/20: loss=1.70335
+10/20: loss=1.25590
+11/20: loss=1.44911
+12/20: loss=1.81344
+13/20: loss=1.58617
+14/20: loss=1.70508
+15/20: loss=1.56832
+16/20: loss=1.28459
+17/20: loss=1.64025
+18/20: loss=1.46109
+19/20: loss=1.37334
+20/20: loss=1.58556
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:24,  3.43it/s]
+Loading weights:  92%|█████████▏| 267/290 [00:00<00:00, 860.98it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 698.13it/s]
+Recorded results/billsum/pilots/billsum-lora-1564994f1226.json

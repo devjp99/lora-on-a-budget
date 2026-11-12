@@ -1,0 +1,17 @@
+Obtaining file:///kaggle/working/lora-on-a-budget
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: lora_budget
+  Building editable for lora_budget (pyproject.toml): started
+  Building editable for lora_budget (pyproject.toml): finished with status 'done'
+  Created wheel for lora_budget: filename=lora_budget-0.1.0-0.editable-py3-none-any.whl size=1306 sha256=3c11a42669eeddbd7e46ce3a32ee8393ea285434f08dc048bc9938dece1854a2
+  Stored in directory: /tmp/pip-ephem-wheel-cache-fh2hxevf/wheels/fc/7f/c1/d386dabe01896a581402da5602269710baff4d17b8d9b94a97
+Successfully built lora_budget
+Installing collected packages: lora_budget
+Successfully installed lora_budget-0.1.0
