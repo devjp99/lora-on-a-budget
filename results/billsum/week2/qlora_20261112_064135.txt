@@ -1,0 +1,40 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:06,  4.35it/s]
+Loading weights:   2%|▏         | 5/290 [00:00<00:15, 17.94it/s]
+Loading weights:  22%|██▏       | 64/290 [00:00<00:01, 218.76it/s]
+Loading weights:  42%|████▏     | 123/290 [00:00<00:00, 340.45it/s]
+Loading weights:  62%|██████▏   | 181/290 [00:00<00:00, 416.50it/s]
+Loading weights:  80%|████████  | 233/290 [00:00<00:00, 446.10it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 349.49it/s]
+1/20: loss=1.63331
+2/20: loss=1.64276
+3/20: loss=1.48325
+4/20: loss=1.76126
+5/20: loss=1.51677
+6/20: loss=1.72074
+7/20: loss=1.73374
+8/20: loss=1.74607
+9/20: loss=1.78593
+10/20: loss=1.32840
+11/20: loss=1.51294
+12/20: loss=1.90046
+13/20: loss=1.65936
+14/20: loss=1.76572
+15/20: loss=1.63009
+16/20: loss=1.33302
+17/20: loss=1.70196
+18/20: loss=1.52081
+19/20: loss=1.43203
+20/20: loss=1.65959
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:05,  4.39it/s]
+Loading weights:  18%|█▊        | 53/290 [00:00<00:01, 202.54it/s]
+Loading weights:  39%|███▊      | 112/290 [00:00<00:00, 338.82it/s]
+Loading weights:  59%|█████▉    | 171/290 [00:00<00:00, 422.59it/s]
+Loading weights:  80%|███████▉  | 231/290 [00:00<00:00, 473.63it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 395.87it/s]
+Recorded results/billsum/pilots/billsum-qlora-b6bcc21e3505.json

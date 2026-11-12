@@ -1,0 +1,36 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:31,  3.15it/s]
+Loading weights:  71%|███████▏  | 207/290 [00:00<00:00, 638.09it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 557.98it/s]
+1/20: loss=1.54399
+2/20: loss=1.56039
+3/20: loss=1.33352
+4/20: loss=1.60941
+5/20: loss=1.34548
+6/20: loss=1.56346
+7/20: loss=1.54067
+8/20: loss=1.56914
+9/20: loss=1.15503
+10/20: loss=1.35936
+11/20: loss=1.73648
+12/20: loss=1.50375
+13/20: loss=1.65044
+14/20: loss=1.46518
+15/20: loss=1.15554
+16/20: loss=1.55389
+17/20: loss=1.37090
+18/20: loss=1.29218
+19/20: loss=1.50242
+20/20: loss=1.44373
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]
+Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.39s/it]
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:  88%|████████▊ | 254/290 [00:00<00:00, 2526.16it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2641.38it/s]
+Recorded results/billsum/pilots/billsum-full_ft-4114c72ac3a7.json

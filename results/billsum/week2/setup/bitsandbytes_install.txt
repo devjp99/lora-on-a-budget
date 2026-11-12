@@ -1,0 +1,6 @@
+Collecting bitsandbytes==0.50.2
+  Downloading bitsandbytes-0.50.2-py3-none-manylinux_2_24_x86_64.whl.metadata (10 kB)
+Downloading bitsandbytes-0.50.2-py3-none-manylinux_2_24_x86_64.whl (43.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 90.5 MB/s  0:00:00
+Installing collected packages: bitsandbytes
+Successfully installed bitsandbytes-0.50.2

@@ -1,0 +1,33 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:06,  4.37it/s]
+Loading weights:  68%|██████▊   | 197/290 [00:00<00:00, 745.63it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 679.35it/s]
+1/20: loss=1.54409
+2/20: loss=1.56071
+3/20: loss=1.39341
+4/20: loss=1.68953
+5/20: loss=1.44567
+6/20: loss=1.62952
+7/20: loss=1.64961
+8/20: loss=1.63928
+9/20: loss=1.69609
+10/20: loss=1.24867
+11/20: loss=1.44149
+12/20: loss=1.80795
+13/20: loss=1.58082
+14/20: loss=1.70051
+15/20: loss=1.56269
+16/20: loss=1.27769
+17/20: loss=1.63526
+18/20: loss=1.45576
+19/20: loss=1.36828
+20/20: loss=1.58002
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<01:26,  3.36it/s]
+Loading weights:  96%|█████████▌| 279/290 [00:00<00:00, 894.49it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 720.42it/s]
+Recorded results/billsum/pilots/billsum-dora-5ccc88dbe43a.json
