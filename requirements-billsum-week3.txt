@@ -1,0 +1,14 @@
+# BillSum-only stack used by the successful Week 2 GPU checks, plus ROUGE.
+# Keep Kaggle's torch==2.11.0+cu130; do not install a CPU torch wheel.
+# Python 3.13 required. Capture full pip freeze before the first real trial.
+# This is not an agreement to replace Kunj's BANKING77 environment.
+transformers==5.20.2
+peft==0.21.2
+accelerate==1.15.0
+bitsandbytes==0.50.2
+huggingface-hub==1.33.0
+pandas==2.3.3
+pyarrow==23.0.1
+PyYAML==6.0.3
+rouge-score==0.1.2
+pytest==9.2.0
